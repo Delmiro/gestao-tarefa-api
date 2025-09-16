@@ -1,12 +1,13 @@
-package com.gestaotarefa.br.entity;
+package com.gestaotarefa.br.domain.entity;
 
+import com.gestaotarefa.br.domain.entity.enumeration.StatusTarefa;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "TAREFA")
+@Table(name = "Tarefa")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
 public class Tarefa {
     @Id
@@ -18,7 +19,9 @@ public class Tarefa {
 
     private String descricao;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private StatusTarefa status;
 
     @Column(name = "data_criacao")
     private LocalDateTime dataCriacao;

@@ -1,10 +1,10 @@
-package com.gestaotarefa.br.entity;
+package com.gestaotarefa.br.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "PROJETO")
+@Table(name = "Projeto")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
 public class Projeto {
     @Id
