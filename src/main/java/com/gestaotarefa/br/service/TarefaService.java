@@ -9,6 +9,7 @@ import com.gestaotarefa.br.mapper.TarefaMapper;
 import com.gestaotarefa.br.repository.ProjetoRepository;
 import com.gestaotarefa.br.repository.TarefaRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -16,12 +17,14 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 
 @Service
-@RequiredArgsConstructor
 public class TarefaService {
 
-    private final TarefaRepository tarefaRepository;
-    private final ProjetoRepository projetoRepository;
-    private final TarefaMapper tarefaMapper;
+    @Autowired
+    private TarefaRepository tarefaRepository;
+    @Autowired
+    private ProjetoRepository projetoRepository;
+    @Autowired
+    private TarefaMapper tarefaMapper;
 
     public TarefaDTO criar(TarefaDTO dto) {
         Projeto projeto = projetoRepository.findById(dto.idProjeto())

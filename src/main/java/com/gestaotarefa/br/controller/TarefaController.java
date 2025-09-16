@@ -2,7 +2,7 @@ package com.gestaotarefa.br.controller;
 
 import com.gestaotarefa.br.domain.dto.TarefaDTO;
 import com.gestaotarefa.br.service.TarefaService;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/tarefas")
-@RequiredArgsConstructor
 @CrossOrigin(origins = "http://localhost:4200")
 public class TarefaController {
 
-    private final TarefaService tarefaService;
+    @Autowired
+    private TarefaService tarefaService;
 
     @PostMapping
     public ResponseEntity<TarefaDTO> criar(@RequestBody TarefaDTO dto) {
