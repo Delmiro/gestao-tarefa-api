@@ -1,6 +1,6 @@
 package com.gestaotarefa.br.domain.entity;
 
-import com.gestaotarefa.br.domain.entity.enumeration.StatusTarefa;
+import com.gestaotarefa.br.domain.enumeration.StatusTarefa;
 import jakarta.persistence.*;
 import lombok.*;
 

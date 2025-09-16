@@ -1,4 +1,4 @@
-package com.gestaotarefa.br.domain.entity.enumeration;
+package com.gestaotarefa.br.domain.enumeration;
 
 public enum StatusTarefa {
     ABERTA,
