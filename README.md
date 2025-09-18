@@ -34,3 +34,33 @@ API desenvolvida para gerenciamento de tarefas, permitindo criar, listar, editar
 ```bash
 git clone <URL_DO_REPOSITORIO>
 cd gestaotarefa
+
+2. Instale as dependências e compile o projeto:
+
+mvn clean install
+
+3. Execute a aplicação:
+
+mvn spring-boot:run
+
+4. Acesse a API em:
+
+http://localhost:8080
+
+
+Endpoints Disponíveis: 
+
+| Método | Endpoint      | Descrição                                    |
+| ------ | ------------- | -------------------------------------------- |
+| GET    | /tarefas      | Retorna a lista de todas as tarefas          |
+| GET    | /tarefas/{id} | Retorna os detalhes de uma tarefa específica |
+| POST   | /tarefas      | Cria uma nova tarefa                         |
+| PUT    | /tarefas/{id} | Atualiza uma tarefa existente                |
+| DELETE | /tarefas/{id} | Exclui uma tarefa                            |
+
+
+Acesso ao H2 Database:
+Console disponível em: http://localhost:8080/h2-console
+JDBC URL: jdbc:h2:mem:gestaotarefa
+Username: sa
+Password: (em branco)
